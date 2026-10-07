@@ -91,26 +91,44 @@ Running an assessment is not required but recommended. It identifies the risks s
 
 Once your AI system is active, the AI System Home page is the central view for all governance activity related to that system. It has five tabs: **Dashboard**, **System Details**, **Risk & Controls**, **Assessment History**, and **Cost & Usage**.
 
-Key sections include:
-- **AI System Details**
-- **Guardrail Summary**
-- **API Key Access**
-- **Usage and Violation Metrics**
+### **Dashboard tab includes:**
 
-<img height="200" src="/images/ai-systems/system-dashboard.png" />
+- **Summary Cards** — Messages scanned, violations (monitored, blocked, masked), scoped risks, and active guardrails.
+- **Violations and Messages Trend** — A time-series chart showing messages scanned and violations per guardrail over the selected date range.
+- **Entities and Patterns with Most Violations** — Top entities triggering data protection violations.
+- **Harmful Content Violations Detected** — Breakdown of harmful content categories flagged.
+- **Top 10 Blocked Topics** — Most frequently blocked topics.
+- **Top 10 Blocked Words and Phrases** — Most frequently blocked words and phrases.
 
----
+### **System Details tab includes:**
 
-## Editing AI System Details
+- AI System name, status, description, purpose, created by, created at, last modified, initial risk rating, and AI providers.
+- Assessment section: prompts you to run an assessment if none has been taken yet.
+- Guardrails section: shows active guardrails or an empty state with a Configure Guardrails CTA.
 
-To Edit an Existing AI System:
+### **Risk & Controls tab includes:**
 
-1. Navigate to the **Home Page**.
-2. In the **AI Systems Table**, find your AI system and click the **View** in the last column.
-3. On the **AI System Dashboard**, Click **Edit** to return to **Step 1** of the setup process
-4. Modify the necessary fields and click **Save Changes**.
+- A table of all risks scoped to this AI system showing risk name, description, source, control, control description, and the mapped guardrail.
 
----
+### **Assessment History tab includes:**
+
+- A list of all completed assessments with started at, completed at, completed by, risks, controls, guardrails counts, and a View Result CTA.
+- To start a new assessment, go to the System Details tab.
+
+### **Cost & Usage tab includes:**
+
+- Summary cards: messages, tokens, cost, and average cost per 1K tokens.
+- AI Cost and Usage Trend chart filterable by provider.
+- AI Cost Breakdown showing interaction cost and usage, top AI models by cost, and top AI providers by cost.
+
+## **Editing or Managing an AI System**
+
+The ellipsis menu (three dots) in the top right of the AI System page gives Admins two options:
+
+- **Edit** — Opens the AI System update popup where all fields are editable.
+- **Deactivate / Activate** — Toggles the AI system status. The option shown depends on the current status of the system.
+
+> Both options are available to Organisation Admins and Platform Owners only. Standard Users do not see the ellipsis menu.
 
 ## Next Steps
 
