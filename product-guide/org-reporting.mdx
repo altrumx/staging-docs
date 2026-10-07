@@ -1,20 +1,20 @@
 ---
-title: Organisation Reporting
-description: "Understand how to access, filter, and analyse AI performance and guardrail violation data"
-sidebarTitle: Organisation
+title: "Organisation Reporting"
+description: "A single, org-wide view of AI system activity, scanning volume, violations, cost, and guardrail effectiveness."
+sidebarTitle: "Organisation"
 ---
 
 ## Overview
 
-The **Organisation Reporting** module provides comprehensive, real-time insights into the performance of all AI systems across your organisation and the effectiveness of guardrail enforcement.
+The **Organisation page** gives you a consolidated view of all AI systems across your organisation. Track scanning activity, monitor violations, analyse costs, and review guardrail performance
 
-Organisation Reporting enables you to track aggregated usage statistics, monitor organisation-wide guardrail adherence, and identify trends over time, empowering better governance and continuous improvement at the organisational level.
+All data on this page is driven by the **Date range filter**, which updates every card, chart, and table on the page. All dates and times are displayed in UTC.
 
 ---
 
 ## Accessing the Organisation Reporting Dashboard
 
-1. From the **Navigation Panel**, click on the **Reporting** tab and select **Organisation**.
+1. From the **Navigation Panel**, click on **Organisation**.
 2. You will be directed to the **Organisation Reporting Page**, where you can access comprehensive organisational insights across all AI systems.
 
 <img height="200" src="/images/reporting/org-report.png" />
@@ -25,28 +25,24 @@ Organisation Reporting enables you to track aggregated usage statistics, monitor
 
 The Organisation Reporting Page provides a comprehensive overview of all AI systems across your organisation:
 
-### Key Metrics
+### **Key Metrics**
 
-- **Aggregated Usage Statistics**: Track total request volume, response times, and model performance across all AI systems
-- **Organisation-Wide Guardrail Violations**: Monitor compliance and identify potential issues across the entire organisation
-- **Performance Trends**: Analyse patterns over time to optimise organisational AI performance
-- **Cross-System Analytics**: Compare performance and compliance metrics across different AI systems
+- **Messages Scanned** — Total messages processed across all AI systems and guardrail categories in the selected period.
+- **Violations** — Total violations broken down by Blocked, Masked, and Monitored across all AI systems.
+- **Total Cost** — Organisation-wide AI spend in USD with a comparison to the previous equivalent period.
+- **Guardrail Activity** — Violation trends per guardrail category including Data Protection, Harmful Content, Restricted Topics, Prompt Injections, and more.
+- **AI Cost Breakdown** — Spend broken down by AI system, provider, and model.
 
 ### Time Filter Options
 
+- **Today**
 - **Last 7 Days**
 - **Last 30 Days**
 - **Last 90 Days**
+- **Last 365 Days**
 - **Year to Date**
 
-Selecting a timeframe will automatically update the statistics and visualisations to show organisation-wide trends and patterns.
-
-### Overview Benefits
-
-- **Complete Organisational View**: See all AI systems and their performance in one consolidated dashboard
-- **No System Filtering Required**: All data is automatically aggregated across the entire organisation
-- **Executive-Level Insights**: Perfect for leadership and governance teams to understand overall AI system health
-- **Compliance Monitoring**: Track organisation-wide adherence to guardrail policies and regulations
+Selecting a timeframe will automatically update the statistics and visualisations to show organisation-wide trends and patterns
 
 ---
 

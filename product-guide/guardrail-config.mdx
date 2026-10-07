@@ -1,117 +1,106 @@
 ---
-title: Guardrail Config
-description: "Define, configure, and enforce responsible AI guardrails within your projects"
-sidebarTitle: Guardrail Config
+title: "Guardrail Configuration"
+description: "Define, configure, and enforce responsible AI guardrails within your AI systems."
+sidebarTitle: "Guardrail Config"
 ---
 
-## Overview
+## Overview-
 
-The **Guardrail Configuration** module enables users and administrators to define and manage responsible AI guardrails across projects. This ensures alignment with compliance, security, and ethical standards using AltrumAI's flexible and intuitive configuration system.
+The **Guardrail Configuration** module enables Organisation Owners and Admins to define and manage guardrails for their AI systems. You can configure guardrails in three ways:
 
----
-
-## Accessing Guardrail Configuration
-
-1. From the **Home Page**, select your AI System to open the **AI System Dashboard**.
-2. Click the **Edit Guardrails** button to begin editing your guardrails.
-
-<img height="200" src="/images/ai-systems/guardrails.png" />
+- After completing an AI system assessment — risks are identified and guardrail recommendations are suggested.
+- Independently at any time — without taking an assessment, whether your AI system is Active or Inactive.
+- To update an existing configuration — revisit and edit guardrails you have already set up.
 
 ---
 
-### Step 1: Select a Guardrail
+## **Accessing Guardrail Configuration**
 
-- Click on a guardrail from the list on the left.
-- The selected guardrail's configuration options will appear on the right-hand panel.
+From your AI System System Details page, click **Configure Guardrails** if no guardrails are set up yet, or **Manage Guardrails** if you already have an existing configuration.
 
-### Step 2: Configure the Guardrail
+If you have just completed an assessment, click **Review & Test Guardrails** on the Assessment Results screen.
 
-Each guardrail has its own set of configuration options. Common configuration steps include:
+<img
+  height="200"
+  src="/images/ai-systems/guardrails.png"
+/>
+
+---
+
+## **Step 1: Select a Guardrail**
+
+Click on a guardrail from the list on the left. Its configuration options will appear in the right-hand panel.
+
+---
+
+## **Step 2: Configure the Guardrail**
+
+Each guardrail has its own configuration options. Common settings include:
 
 - **Enable the Guardrail** using the toggle at the top of the panel.
-- Choose an **Enforcement Mode**:
-  - **Input** – Applies the selected behaviour to what users send to the model.
-  - **Output** – Applies the selected behaviour to what the model returns as a response.
+- Choose an **Enforcement Mode** — Input, Output, or Both.
 - Select a **Guardrail Behaviour**:
-  - **Monitor** – Lets you review input or output content without taking any action—used for observation and diagnostics.
-  - **Block** – Automatically stops content from being processed if it violates the selected guardrail rules.
-  - **Mask** – Replaces detected sensitive information with anonymised placeholders while allowing content to proceed (available for Data Protection and Custom Data Protection guardrails only).
-- Adjust **Thresholds** (if applicable).
-- Select and Configure relevant **Topics, Entities, Categories, or Words & Phrases** (depending on the guardrail type).
+  - **Monitor** — Observe without taking action.
+  - **Block** — Stop content that violates the guardrail.
+  - **Mask** — Replace sensitive information with anonymised placeholders (Data Protection guardrails only).
+- Adjust **Thresholds** and configure relevant topics, entities, categories, or words and phrases depending on the guardrail type.
 
- _For detailed instructions on each guardrail type, refer to the **Guardrails** section of the documentation._
-
-### Step 4: Save the Configuration
-
-- Click **Save & Continue** to store your configuration.
-- Your updates will now be saved to your AI System and ready to view in the Summary Page.
+> For more detail on each guardrail type, refer to the Guardrails section of the documentation.
 
 ---
 
-## Testing Guardrails
+## **Step 3: Testing Enabled Guardrails**
 
-Once you've configured one or more guardrails, navigate to the **Test Configuration** Page.
+Click **Save & Continue** to proceed to the Test Configuration screen.
 
-This is a **sandbox environment** where you can:
+The Test Configuration screen is a sandbox environment where you can:
 
 - Interact with a test chatbot.
 - See your configured guardrails in action.
-- Observe how inputs and outputs are flagged & blocked in real time.
+- Observe how inputs and outputs are Masked, flagged and blocked in real time.
 
-> **Note:** This is a valuable step to validate guardrail behaviour before applying changes to a live AI System.
+If you need to make changes based on your testing, click **Back** to return to the Guardrail Configuration screen.
 
-<img height="200" src="/images/guardrail-config/test-guardrails.png" />
-
----
-
-## Applying Configured Guardrails
-
-When you're satisfied with your configuration and testing:
-
-1. Review the **Summary** page where you can:
-   - View all configured guardrails
-   - Make additional changes if required
-   - Update existing configurations
-2. Once you're happy with all changes, click **View AI System** to return to the AI System Dashboard.
+> Testing is optional but recommended before applying changes to a live AI system.
 
 ---
 
-## Editing or Disabling Guardrails
+## **Applying Guardrails**
 
-To update or turn off a guardrail:
+When satisfied with your testing, click the primary CTA at the bottom of the Test Configuration screen:
 
-1. From the **AI System Dashboard**, click **Edit Guardrails** to access the Configure Guardrails page.
-2. For each guardrail:
-   - Toggle the **Enable** button On or Off based on your required configuration
-   - Make any additional configuration changes as needed
-3. Click **Save & Continue** to confirm your updates.
+- **Complete Assessment** — if you arrived via an assessment. Returns you to AI System Overview with the assessment marked Completed and guardrails applied.
+- **Apply Guardrails** — if you are configuring or updating independently.
+
+> If your AI system is **Active**, guardrail changes take effect immediately. If your AI system is **Inactive**, guardrails will be applied when you activate it.
 
 ---
 
-## Best Practices
+## **Editing or Disabling Guardrails**
 
-- Start with **Monitor** mode to observe behavior without disruption.
-- Use the **Test Guardrails** page to validate before applying changes.
+1. From the AI System Overview page, click **Manage Guardrails**.
+2. Enable or disable guardrails and make any configuration changes.
+3. Click **Save & Continue** then **Apply Guardrails** to confirm.
+
+---
+
+## **Best Practices**
+
+- Start with **Monitor** mode to observe behaviour without disruption.
+- Use the **Test Guardrails** sandbox to validate before applying changes.
 - Regularly review violation logs and refine configurations as needed.
-- Apply stricter enforcement to regulated or high-risk AI Systems.
+- Apply stricter enforcement to regulated or high-risk AI systems.
 
 ---
 
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card
-    title="Review Reports"
-    icon="chart-bar"
-    href="/product-guide/reporting"
-  >
+  <Card title="Review Reports" icon="chart-bar" href="/product-guide/reporting">
     Analyse guardrail violation data and performance trends.
   </Card>
-  <Card
-    title="Manage Users"
-    icon="user-gear"
-    href="product-guide/administration"
-  >
+
+  <Card title="Manage Users" icon="user-gear" href="product-guide/administration">
     Update roles and permissions to align with guardrail responsibilities.
   </Card>
 </CardGroup>

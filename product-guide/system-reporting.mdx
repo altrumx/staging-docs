@@ -1,58 +1,164 @@
 ---
-title: AI System Reporting
-description: "Understand how to access, filter, and analyse AI system performance and guardrail violation data"
-sidebarTitle: AI Systems
-
+title: "AI System Reporting"
+description: "Understand the governance, risk, guardrail activity, and cost and usage data for each of your AI systems."
+sidebarTitle: "AI Systems"
 ---
 
 ## Overview
 
-The **AI System Reporting** module provides real-time insights into the performance of your AI systems and the effectiveness of guardrail enforcement.
-
-AI System Reporting enables you to track key usage statistics, monitor guardrail adherence, and identify trends over time empowering better governance and continuous improvement.
+Each AI system in Altrum has a dedicated reporting view built into the AI System Details page. It is split across two tabs: **Dashboard** for governance and guardrail activity, and **Cost and Usage** for financial and token usage data. Both tabs are scoped entirely to the selected AI system.
 
 ---
 
-## Accessing the AI System Reporting Dashboard
+## **Accessing AI System Reporting**
 
-1. From the **Navigation Panel**, click on the **Reporting** tab and select **AI Systems**
-2. You will be directed to the **AI System Reporting Page**, where you can access detailed insights for your AI systems.
-
-<img height="200" src="/images/reporting/ai-system-report.png" />
----
-
-## Navigating the AI System Reporting Page
-
-The AI System Reporting Page provides comprehensive metrics and analytics for your AI systems:
-
-### AI System Filter
-
-By default, **all AI systems** are selected and included in the reporting dashboard. To focus on specific AI systems:
-
-1. Use the **AI System Filter** dropdown to select individual systems
-2. Choose an AI systems to view their specific metrics and performance data
-3. The charts and statistics will automatically update to reflect only the selected systems
-
-### Key Metrics
-
-- **Usage Statistics**: Track request volume, response times, and model performance
-- **Guardrail Violations**: Monitor compliance and identify potential issues
-- **Performance Trends**: Analyse patterns over time to optimise system performance
-
-### Time Filter Options
-
-- **Last 7 Days**
-- **Last 30 Days** 
-- **Last 90 Days**
-- **Year to Date**
-
-Selecting a timeframe will automatically update the statistics and visualisations.
+1. From the sidebar, click **AI Systems**.
+2. Select an AI system from the list.
+3. You will land on the **Dashboard** tab by default. Click **Cost and Usage** to switch to the financial view.
 
 ---
+
+## Dashboard Tab
+
+The Dashboard gives you a real-time view of your AI system's assessment status, scanning activity, violations, active risks, and guardrail performance.
+
+**Default duration:** Last 7 days
+
+**Duration filter options:** Today / Last 7 days / Last 30 days / Last 90 days / Last 365 days / Year to date
+
+The duration filter updates all historical data on the page. Assessment status, scoped risks, and active guardrails always reflect the current system state regardless of the selected duration.
+
+---
+
+### **Assessment Status**
+
+If your AI system has been assessed at least once, the Dashboard shows how many days have passed since the last assessment and the date and time it was completed.
+
+Click **Assessment history** to view all completed assessments for this system.
+
+> This section is not shown if no assessment has been completed yet.
+
+---
+
+### **Summary Cards**
+
+<table>
+  <colgroup>
+    <col width="202" />
+    <col width="579" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Card</th>
+      <th>What it shows</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Messages Scanned</td>
+      <td>Total messages processed in the selected period.</td>
+    </tr>
+    <tr>
+      <td>Violations</td>
+      <td>Total violations with a breakdown by Blocked, Masked, and Monitored.</td>
+    </tr>
+    <tr>
+      <td>Scoped Risks</td>
+      <td>Current number of risks applicable to this system. Click View to go to the Risk and Controls tab.</td>
+    </tr>
+    <tr>
+      <td>Active Guardrails</td>
+      <td>Current number of active guardrails. Click View to manage guardrails.</td>
+    </tr>
+  </tbody>
+</table>
+
+> These cards are not shown if the AI system has never been activated and no guardrails have been configured.
+
+---
+
+### **Violations and Messages Trend**
+
+A combined chart showing scanning volume and violation activity over the selected period.
+
+- Messages Scanned is shown as bars. Violations is shown as a line, colour-coded per guardrail category.
+- Three summary tiles above the chart show total messages scanned, total violations, and violation rate for the selected period.
+- Use the **guardrail filter pills** to focus the chart on a specific guardrail. All guardrails is the default.
+- Hover over any point on the chart to see messages scanned, violations, violation rate, and a per-guardrail breakdown for that period.
+
+---
+
+### **Guardrail Insights**
+
+Four sections below the trend chart break down violation activity by guardrail type:
+
+- **Top 5 most violated entities and patterns** — Most frequently triggered entity and pattern types from your Data Protection and Custom Data Protection guardrails.
+- **Harmful content violations detected** — Violations by category: Hate, Violence, Insults, Misconduct, Sexual.
+- **Top 10 blocked topics** — Most frequently blocked topics from your Restricted Topics guardrail.
+- **Top 10 blocked words and phrases** — Most frequently blocked entries from your Words and Phrases guardrail.
+
+All four sections update with the selected duration filter.
+
+---
+
+### Cost and Usage Tab
+
+The Cost and Usage tab gives you a financial and token usage view of the selected AI system. Use it to track spend, monitor token consumption, and understand which models and providers are driving costs.
+
+**Default duration:** Last 30 days
+
+**Duration filter options:** Today / Last 7 days / Last 30 days / Last 90 days / Year to date
+
+All data on this tab is scoped to the selected AI system and selected date range. Each card and chart includes a comparison against the equivalent previous period.
+
+---
+
+**Summary Cards**
+
+| Card | What it shows |
+| :-- | :-- |
+| Messages | Total messages sent and received in the selected period, with a percentage change vs the previous equivalent period. |
+| Tokens | Total tokens consumed in the selected period, with a percentage change vs the previous equivalent period. |
+| Cost | Total AI cost in USD for the selected period, with a percentage change vs the previous equivalent period. |
+| Avg. Cost / 1K Tokens | Average cost per 1,000 tokens consumed, with a comparison to the previous equivalent period. |
+
+---
+
+## **AI Cost and Usage Trend**
+
+A dual-line chart showing cost and token usage over the selected period. Cost is on the left axis, token usage on the right. Chart granularity adapts to the selected duration (hourly for Today, daily for Last 7 days, and so on).
+
+---
+
+### **AI Cost Breakdown**
+
+Three parallel sections showing cost by interaction type, model, and provider for the selected period:
+
+- **AI Interaction Cost and Usage** — Breakdown of prompt and response interactions showing interaction count, cost, and cost per 1,000 interactions for both prompts and responses, plus total interaction cost.
+- **AI Models** — Top 3 models by cost with cost amount and percentage of total. Remaining models are grouped under Others.
+- **AI Providers** — Top 3 providers by cost with cost amount and percentage of total. Remaining providers are grouped under Others.
+
+---
+
+### **Exporting the Reports**
+
+Both tabs support **Export PDF**. The export reflects the current state of the page including the selected duration.
+
+- Dashboard export includes: AI system name, report generation date and time, selected duration, all summary cards, trend chart, and guardrail insight sections.
+- Cost and Usage export includes: AI system name, report generation date and time, selected duration, all four summary cards, cost and usage trend chart, and the full AI cost breakdown.
+
+---
+
+## **Best Practices**
+
+- Check the Dashboard tab regularly to stay on top of violation trends for each AI system.
+- Use the guardrail filter on the trend chart to investigate activity for a specific guardrail.
+- Use the Cost and Usage tab to monitor spend per AI system and identify which models or providers are driving costs.
+- If summary card values look unexpected, click View on Scoped Risks or Active Guardrails to review the underlying configuration.
 
 ## Best Practices
 
-- **Regular Monitoring**: Check the AI System Reporting Dashboard regularly to ensure continuous compliance
+- **Regular Monitoring**: Check the AI System Reports regularly to ensure continuous compliance
 - **Trend Analysis**: Use time filters to identify patterns and spot early warning signs
 - **Performance Optimisation**: Monitor usage patterns to optimise costs and performance
 

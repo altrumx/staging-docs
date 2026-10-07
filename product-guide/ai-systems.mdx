@@ -1,7 +1,7 @@
 ---
-title: AI Systems
-description: "Learn how to create, set up, and manage AI systems in AltrumAI"
-sidebarTitle: AI Systems
+title: "AI Systems"
+description: "Learn how to create, set up, and manage AI systems in Altrum"
+sidebarTitle: "AI Systems"
 ---
 
 ## Navigating the Dashboard
@@ -9,11 +9,17 @@ sidebarTitle: AI Systems
 Once logged in, you'll be directed to the **Home Page**, the control centre of your AltrumAI experience.
 
 ### The Home Page Includes:
-- **Navigation Panel** – Quick access to Home, Reporting, Observability, Administration, Support, and Documentation.
-- **Summary Statistics** – Key metrics, charts, and graphs on AI systems, requests, and guardrail violations.
-- **AI Systems List** – A searchable and filterable table view of all AI systems with actionable controls.
+- **Navigation Panel** — Quick access to Home, Organisation, AI Systems, Violation Logs, Manage Users, Support, and Documentation.
+- **Summary Cards** — Key metrics at a glance: Active AI Systems, Active Systems without Guardrails, Violation Rate, and Total Cost.
+- **Top 5 AI Systems by Usage and Cost** — A ranked view of your most active AI systems by token usage and cost over the selected date range.
+- **Top 5 AI Systems by Messages and Violations** — A ranked view showing messages scanned and violation counts per AI system.
+- **Most Frequent Violations** — A breakdown of the most common violation types across all AI systems, ranked by volume, showing blocked, masked, and monitored counts per violation.
 
-<img height="200" src="/images/ai-systems/nebula-home.png" />
+<img
+  height="200"
+  src="/images/ai-systems/nebula-home.png"
+  alt=""
+/>
 
 ---
 
@@ -22,7 +28,7 @@ Once logged in, you'll be directed to the **Home Page**, the control centre of y
 ### Step 1: Launch the AI System Wizard
 
 1. Click the **Add AI System** button in the left-hand navigation panel
-2. You will be redirected to the **AI System Details** Step.
+2. A popup will appear for you to enter your AI system details.
 
 <img height="200" src="/images/ai-systems/add-ai-system-button.png" />
 
@@ -33,80 +39,96 @@ Once logged in, you'll be directed to the **Home Page**, the control centre of y
 1. Fill in the required fields:
    - **AI System Name** (required)
    - **AI System Description** (required)
+   - **AI System Purpose** (required)
    - **AI System Owner** (required)
-   - **LLM Service Providers** (select one or more)
-> **Important:**  
-> Your AI System will only function with the AI Providers you select during setup. Ensure you choose all providers you plan to use with this system.
-2. Optionally, add:
-   - **AI System Tags**
-3. Click **Add & Continue**.
+   - **AI Providers** (select one or more)
 
-<img height="200" src="/images/ai-systems/add-ai-system-wizard.png" />
----
+Click **"Create"** to save.
 
-### Step 3: Configure the AI System
+> **Note:** Your AI system will only function with the AI providers you select during setup. Ensure you choose all providers you plan to use with this system.
 
-Upon creation, you'll be redirected to the **Configure Guardrails** environment.:
+**Setting Up Your AI System:** Once created, your AI system is in **Inactive** status. We recommend completing the following steps before activating.
 
-1. From the list of available guardrails, click to select a guardrail.
-2. Use the panel on the right to:
-   - Enable or disable the guardrail
-   - Set enforcement mode (e.g., **Monitor** or **Block**)
-   - Adjust thresholds or select relevant criteria (topics, entities, words & phrases)
+### **Step 3: Assess your AI System (Optional)**
 
-<img height="200" src="/images/ai-systems/guardrails.png" />
+Running an assessment is not required but recommended. It identifies the risks specific to your system and pre-configures the most relevant guardrails for you.
+
+1. On the AI System Details tab, click **Start Assessment**.
+2. The assessment agent will guide you through a short conversation about your system. Most assessments take less than 10 minutes.
+3. Once complete, your identified risks, recommended controls, and suggested guardrails will be displayed on the Assessment Results screen.
+
+> If you already know which guardrails apply to your system, you can skip this step and configure them directly (from System Details Tab). You can always come back and run an assessment later.
+
+### **Step 4: Configure Guardrails**
+
+1. If you completed an assessment, click **Review & Test Guardrails** on the Assessment Results screen. If you skipped the assessment, navigate to your AI System "System Detail" Tab and click **Configure Guardrails**.
+2. Review and configure each guardrail using the right-hand panel:
+   - Enable or disable the guardrail.
+   - Set enforcement mode (Monitor, Block, or Mask).
+   - Adjust thresholds or select relevant criteria (topics, entities, words and phrases).
+3. Test your configuration in the built-in sandbox environment:
+
+   - Interact with a test chatbot.
+   - Validate how guardrails behave in real time.
+   - Review flagged inputs and outputs.
+4. Once satisfied, click **Continue to Activate AI System**.
 
 > **Note:**  
 > For more detail on individual guardrails, refer to the [Guardrail Configuration Guide](/guardrails).
 
-#### 3.2 Test Guardrails
+### **Step 5: Activate your AI System**
 
-1. Use the built-in sandbox environment to:
-   - Interact with a test chatbot
-   - Validate how guardrails behave in real time
-   - Review flagged inputs and outputs
-2. Once satisfied, click **Continue to Summary** to proceed.
+1. On the AI System Details, click **Activate AI System** in ellipses 
+2. A confirmation popup will appear. Click **Activate** to confirm.
+3. Your AI system status will update to **Active** immediately.
+4. A success notification will confirm activation.
 
-<img height="200" src="/images/ai-systems/test-guardrails.png" />
-
----
-
-### Step 4: Review and Activate AI System
-
-1. Review your project’s setup on the **Summary Page**.
-2. Use the edit icons to make changes to any step if needed.
-3. Once confirmed, click **Activate AI System**.
-4. A success message will appear
-5. Click **View AI System** to open the **AI System Dashboard**.
-
-<img height="200" src="/images/ai-systems/summary.png" />
+> **Note:**<br />Guardrail configuration is not required to activate your AI system. If your organisation only needs to use the AI Gateway, you can activate without configuring any guardrails.
 
 ---
 
-## AI System Dashboard
+## AI System Home
 
-Once an AI system is published, the **AI System Dashboard** becomes the central view for all configuration, activity, and guardrail enforcement related to that AI system.
+Once your AI system is active, the AI System Home page is the central view for all governance activity related to that system. It has five tabs: **Dashboard**, **System Details**, **Risk & Controls**, **Assessment History**, and **Cost & Usage**.
 
-Key sections include:
-- **AI System Details**
-- **Guardrail Summary**
-- **API Key Access**
-- **Usage and Violation Metrics**
+### **Dashboard tab includes:**
 
-<img height="200" src="/images/ai-systems/system-dashboard.png" />
+- **Summary Cards** — Messages scanned, violations (monitored, blocked, masked), scoped risks, and active guardrails.
+- **Violations and Messages Trend** — A time-series chart showing messages scanned and violations per guardrail over the selected date range.
+- **Entities and Patterns with Most Violations** — Top entities triggering data protection violations.
+- **Harmful Content Violations Detected** — Breakdown of harmful content categories flagged.
+- **Top 10 Blocked Topics** — Most frequently blocked topics.
+- **Top 10 Blocked Words and Phrases** — Most frequently blocked words and phrases.
 
----
+### **System Details tab includes:**
 
-## Editing AI System Details
+- AI System name, status, description, purpose, created by, created at, last modified, initial risk rating, and AI providers.
+- Assessment section: prompts you to run an assessment if none has been taken yet.
+- Guardrails section: shows active guardrails or an empty state with a Configure Guardrails CTA.
 
-To Edit an Existing AI System:
+### **Risk & Controls tab includes:**
 
-1. Navigate to the **Home Page**.
-2. In the **AI Systems Table**, find your AI system and click the **View** in the last column.
-3. On the **AI System Dashboard**, Click **Edit** to return to **Step 1** of the setup process
-4. Modify the necessary fields and click **Save Changes**.
+- A table of all risks scoped to this AI system showing risk name, description, source, control, control description, and the mapped guardrail.
 
----
+### **Assessment History tab includes:**
+
+- A list of all completed assessments with started at, completed at, completed by, risks, controls, guardrails counts, and a View Result CTA.
+- To start a new assessment, go to the System Details tab.
+
+### **Cost & Usage tab includes:**
+
+- Summary cards: Messages scanned, Tokens, Cost, and Average cost per 1K tokens.
+- AI Cost and Usage Trend chart filterable by provider.
+- AI Cost Breakdown showing interaction cost and usage, top AI models by cost, and top AI providers by cost.
+
+## **Editing or Managing an AI System**
+
+The ellipsis menu (three dots) in the top right of the AI System page gives Admins two options:
+
+- **Edit** — Opens the AI System update popup where all fields are editable.
+- **Deactivate / Activate** — Toggles the AI system status. The option shown depends on the current status of the system.
+
+> Both options are available to Organisation Admins and Owners only. Regular Users do not see the ellipsis menu.
 
 ## Next Steps
 
