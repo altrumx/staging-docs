@@ -16,21 +16,39 @@ You can arrive at guardrail configuration in three ways:
 
 ---
 
-**Accessing Guardrail Configuration**
+## **Accessing Guardrail Configuration**
 
 The entry point on your AI System Overview page depends on your current guardrail state:
 
-| State | CTA shown |
-| :-- | :-- |
-| No guardrails configured yet | Configure Guardrails |
-| One or more guardrails already enabled | Manage Guardrails |
+<table>
+  <colgroup>
+    <col width="333" />
+    <col width="176" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>CTA shown</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>No guardrails configured yet</td>
+      <td>Configure Guardrails</td>
+    </tr>
+    <tr>
+      <td>One or more guardrails already enabled</td>
+      <td>Manage Guardrails</td>
+    </tr>
+  </tbody>
+</table>
 
-**After an assessment:**
+# **After an assessment:**
 
 1. On the Assessment Results screen, click **Review & Test Guardrails**.
 2. You will land on the Guardrail Configuration screen.
 
-**Without an assessment:**
+## **Without an assessment:**
 
 1. From the AI System Overview page, click **Configure Guardrails** or **Manage Guardrails**.
 2. You will land on the Guardrail Configuration screen.
@@ -42,7 +60,10 @@ The entry point on your AI System Overview page depends on your current guardrai
 1. From the **Home Page**, select your AI System to open the **AI System Dashboard**.
 2. Click the **Edit Guardrails** button to begin editing your guardrails.
 
-<img height="200" src="/images/ai-systems/guardrails.png" />
+<img
+  height="200"
+  src="/images/ai-systems/guardrails.png"
+/>
 
 ---
 
@@ -66,7 +87,7 @@ Each guardrail has its own set of configuration options. Common configuration st
 - Adjust **Thresholds** (if applicable).
 - Select and Configure relevant **Topics, Entities, Categories, or Words & Phrases** (depending on the guardrail type).
 
- _For detailed instructions on each guardrail type, refer to the **Guardrails** section of the documentation._
+_For detailed instructions on each guardrail type, refer to the **Guardrails** section of the documentation._
 
 ### Step 4: Save the Configuration
 
@@ -87,7 +108,10 @@ This is a **sandbox environment** where you can:
 
 > **Note:** This is a valuable step to validate guardrail behaviour before applying changes to a live AI System.
 
-<img height="200" src="/images/guardrail-config/test-guardrails.png" />
+<img
+  height="200"
+  src="/images/guardrail-config/test-guardrails.png"
+/>
 
 ---
 
@@ -127,18 +151,11 @@ To update or turn off a guardrail:
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card
-    title="Review Reports"
-    icon="chart-bar"
-    href="/product-guide/reporting"
-  >
+  <Card title="Review Reports" icon="chart-bar" href="/product-guide/reporting">
     Analyse guardrail violation data and performance trends.
   </Card>
-  <Card
-    title="Manage Users"
-    icon="user-gear"
-    href="product-guide/administration"
-  >
+
+  <Card title="Manage Users" icon="user-gear" href="product-guide/administration">
     Update roles and permissions to align with guardrail responsibilities.
   </Card>
 </CardGroup>
